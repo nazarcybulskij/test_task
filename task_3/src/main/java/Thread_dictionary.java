@@ -35,6 +35,7 @@ public class Thread_dictionary extends Thread {
                 boolean asd;
                 if (asd=my_compporator.isCompare()) {
                     System.out.println(index);
+                    break;
 
                  }
 

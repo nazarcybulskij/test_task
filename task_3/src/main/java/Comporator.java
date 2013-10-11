@@ -1,3 +1,5 @@
+import org.apache.commons.lang.StringUtils;
+
 /**
  * Created with IntelliJ IDEA.
  * User: NAZAR
@@ -74,13 +76,22 @@ public class Comporator {
     private boolean equals_method(String str1,String str2){
 
         //  тут можу бути будь яка реалізація метода     (потім щось придумаємо , щоб зробити Advanced)
+         StringUtils stringUtils=new StringUtils();
 
-        if (str1.equals(str2)){
+        int threshold=(int)((str1.length()+str2.length())/5.0);
+        //System.out.println(threshold+"  "+StringUtils.getLevenshteinDistance(str1,str2));
+
+        if (threshold>=StringUtils.getLevenshteinDistance(str1,str2))
+            return  true;
+        else
+            return false;
+
+      /*  if (str1.equals(str2)){
             return  true;
 
         }
         return false;
-
+                                 */
 
     }
 }
