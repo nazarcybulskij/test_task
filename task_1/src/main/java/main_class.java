@@ -12,12 +12,13 @@ import java.io.InputStreamReader;
 public class main_class {
     public static void main(String[] args) {
 
-        int n=0;
-        BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
+        int n =0;
         try {
-            n=Integer.parseInt(reader.readLine());
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+                n = Integer.parseInt(reader.readLine());
+            }
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
 

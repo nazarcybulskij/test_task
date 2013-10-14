@@ -16,13 +16,14 @@ import java.util.regex.Pattern;
 public class main_class {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          List<File> print_list=FindFile.SearchByMask(reader.readLine(), new File(reader.readLine()));
-          for (File temp:print_list){
-              System.out.println(temp.getAbsoluteFile());
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            List<File> print_list = FindFile.SearchByMask(reader.readLine(), new File(reader.readLine()));
+            for (File temp : print_list) {
+                System.out.println(temp.getAbsoluteFile());
 
-          }
+            }
 
+        }
 
 
     }
